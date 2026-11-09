@@ -1,657 +1,657 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Great Midea Corporate Celebration</title>
-    <style>
-        /* === ПАЛИТРА: СТРОГИЙ ЧЁРНЫЙ + ЗОЛОТО (GATSBY) === */
-        :root {
-            --bg-color: #050505;
-            --bg-light: #151515;
-            --gold: #D4AF37;
-            --gold-light: #F3E5AB;
-            --gold-hover: #b5952f;
-            --white: #f5f5f5;
-            --black: #000000;
-            --error-red: #e74c3c;
-            
-            --text-color: #f5f5f5;
-            --font-serif: "Georgia", "Times New Roman", serif;
-            --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            --radius: 8px;
-            --transition: 0.3s ease;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Great Midea Corporate Celebration</title>
+<style>
+/* === ПАЛИТРА: СТРОГИЙ ЧЁРНЫЙ + ЗОЛОТО (GATSBY) === */
+:root {
+--bg-color: #050505;
+--bg-light: #151515;
+--gold: #D4AF37;
+--gold-light: #F3E5AB;
+--gold-hover: #b5952f;
+--white: #f5f5f5;
+--black: #000000;
+--error-red: #e74c3c;
 
-        /* === БАЗОВЫЕ НАСТРОЙКИ === */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: var(--font-sans);
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            background-image: 
-                radial-gradient(circle at top center, var(--bg-light) 0%, var(--bg-color) 70%);
-            background-attachment: fixed;
-        }
+--text-color: #f5f5f5;
+--font-serif: "Georgia", "Times New Roman", serif;
+--font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+--radius: 8px;
+--transition: 0.3s ease;
+}
 
-        @media (prefers-reduced-motion: reduce) {
-            * { transition: none !important; }
-        }
+/* === БАЗОВЫЕ НАСТРОЙКИ === */
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
 
-        *:focus-visible {
-            outline: 3px solid var(--gold);
-            outline-offset: 2px;
-        }
+body {
+background-color: var(--bg-color);
+color: var(--text-color);
+font-family: var(--font-sans);
+line-height: 1.6;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+background-image:
+radial-gradient(circle at top center, var(--bg-light) 0%, var(--bg-color) 70%);
+background-attachment: fixed;
+}
 
-        /* === ШАПКА === */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            background-color: rgba(5, 5, 5, 0.9);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-        }
+@media (prefers-reduced-motion: reduce) {
+* { transition: none !important; }
+}
 
-        .brand {
-            font-family: var(--font-sans);
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: var(--white);
-            text-transform: uppercase;
-        }
+*:focus-visible {
+outline: 3px solid var(--gold);
+outline-offset: 2px;
+}
 
-        .lang-switch {
-            display: flex;
-            gap: 10px;
-        }
+/* === ШАПКА === */
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px 5%;
+border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+background-color: rgba(5, 5, 5, 0.9);
+position: sticky;
+top: 0;
+z-index: 100;
+backdrop-filter: blur(10px);
+}
 
-        .lang-btn {
-            background: none;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            padding: 5px 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: var(--font-sans);
-            font-weight: 600;
-            transition: var(--transition);
-        }
+.brand {
+font-family: var(--font-sans);
+font-size: 1.5rem;
+font-weight: 700;
+letter-spacing: 2px;
+color: var(--white);
+text-transform: uppercase;
+}
 
-        .lang-btn.active, .lang-btn:hover {
-            background-color: var(--gold);
-            color: var(--black);
-        }
+.lang-switch {
+display: flex;
+gap: 10px;
+}
 
-        /* === КОНТЕЙНЕР === */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            flex-grow: 1;
-        }
+.lang-btn {
+background: none;
+border: 1px solid var(--gold);
+color: var(--gold);
+padding: 5px 10px;
+border-radius: 4px;
+cursor: pointer;
+font-family: var(--font-sans);
+font-weight: 600;
+transition: var(--transition);
+}
 
-        /* === HERO СЕКЦИЯ === */
-        .hero {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+.lang-btn.active, .lang-btn:hover {
+background-color: var(--gold);
+color: var(--black);
+}
 
-        .hero h1 {
-            font-family: var(--font-serif);
-            font-size: 2.8rem;
-            color: var(--gold);
-            margin-bottom: 10px;
-            line-height: 1.2;
-            font-weight: normal;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
+/* === КОНТЕЙНЕР === */
+.container {
+max-width: 800px;
+margin: 0 auto;
+padding: 40px 20px;
+flex-grow: 1;
+}
 
-        .hero p.subtitle {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.6);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 35px;
-        }
+/* === HERO СЕКЦИЯ === */
+.hero {
+text-align: center;
+margin-bottom: 50px;
+}
 
-        .hero img {
-            width: 100%;
-            max-width: 600px;
-            border-radius: var(--radius);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
-            margin: 0 auto;
-            display: block;
-        }
+.hero h1 {
+font-family: var(--font-serif);
+font-size: 2.8rem;
+color: var(--gold);
+margin-bottom: 10px;
+line-height: 1.2;
+font-weight: normal;
+text-transform: uppercase;
+letter-spacing: 3px;
+}
 
-        /* === ИНФО БЛОК === */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
+.hero p.subtitle {
+font-size: 1.2rem;
+color: rgba(255, 255, 255, 0.6);
+letter-spacing: 2px;
+text-transform: uppercase;
+margin-bottom: 35px;
+}
 
-        .info-card {
-            background-color: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            padding: 20px;
-            border-radius: var(--radius);
-            text-align: center;
-        }
+.hero img {
+width: 100%;
+max-width: 600px;
+border-radius: var(--radius);
+border: 1px solid rgba(212, 175, 55, 0.3);
+box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+margin: 0 auto;
+display: block;
+}
 
-        .info-card h3 {
-            font-family: var(--font-serif);
-            color: var(--gold);
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
+/* === ИНФО БЛОК === */
+.info-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 20px;
+margin-bottom: 30px;
+}
 
-        .info-card p {
-            font-size: 1rem;
-            margin-bottom: 10px;
-        }
+.info-card {
+background-color: rgba(255, 255, 255, 0.02);
+border: 1px solid rgba(212, 175, 55, 0.15);
+padding: 20px;
+border-radius: var(--radius);
+text-align: center;
+}
 
-        .map-btn {
-            display: inline-block;
-            background-color: transparent;
-            color: var(--gold);
-            border: 1px solid var(--gold);
-            padding: 8px 15px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
+.info-card h3 {
+font-family: var(--font-serif);
+color: var(--gold);
+font-size: 1.1rem;
+margin-bottom: 10px;
+letter-spacing: 1px;
+}
 
-        .map-btn:hover {
-            background-color: rgba(212, 175, 55, 0.1);
-        }
+.info-card p {
+font-size: 1rem;
+margin-bottom: 10px;
+}
 
-        /* === ПРЕДУПРЕЖДЕНИЕ И ОПИСАНИЕ === */
-        .warning-box {
-            background-color: rgba(212, 175, 55, 0.05);
-            border-left: 4px solid var(--gold);
-            padding: 15px 20px;
-            margin-bottom: 30px;
-            color: var(--gold-light);
-        }
+.map-btn {
+display: inline-block;
+background-color: transparent;
+color: var(--gold);
+border: 1px solid var(--gold);
+padding: 8px 15px;
+text-decoration: none;
+border-radius: 4px;
+font-size: 0.9rem;
+transition: var(--transition);
+}
 
-        .description {
-            font-size: 1.1rem;
-            text-align: justify;
-            margin-bottom: 50px;
-            color: rgba(255, 255, 255, 0.8);
-        }
+.map-btn:hover {
+background-color: rgba(212, 175, 55, 0.1);
+}
 
-        /* === ФОРМА RSVP === */
-        .rsvp-section {
-            background-color: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 40px;
-            border-radius: var(--radius);
-            position: relative;
-        }
+/* === ПРЕДУПРЕЖДЕНИЕ И ОПИСАНИЕ === */
+.warning-box {
+background-color: rgba(212, 175, 55, 0.05);
+border-left: 4px solid var(--gold);
+padding: 15px 20px;
+margin-bottom: 30px;
+color: var(--gold-light);
+}
 
-        .rsvp-section::before, .rsvp-section::after {
-            content: '';
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            border: 1px solid var(--gold);
-        }
-        .rsvp-section::before { top: 10px; left: 10px; border-right: none; border-bottom: none; }
-        .rsvp-section::after { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+.description {
+font-size: 1.1rem;
+text-align: justify;
+margin-bottom: 50px;
+color: rgba(255, 255, 255, 0.8);
+}
 
-        .form-group {
-            margin-bottom: 30px;
-        }
+/* === ФОРМА RSVP === */
+.rsvp-section {
+background-color: rgba(255, 255, 255, 0.02);
+border: 1px solid rgba(212, 175, 55, 0.3);
+padding: 40px;
+border-radius: var(--radius);
+position: relative;
+}
 
-        .form-label {
-            display: block;
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            color: var(--gold);
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
+.rsvp-section::before, .rsvp-section::after {
+content: '';
+position: absolute;
+width: 30px;
+height: 30px;
+border: 1px solid var(--gold);
+}
+.rsvp-section::before { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+.rsvp-section::after { bottom: 10px; right: 10px; border-left: none; border-top: none; }
 
-        .form-input {
-            width: 100%;
-            padding: 15px;
-            background-color: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 4px;
-            color: var(--white);
-            font-size: 1rem;
-            font-family: var(--font-sans);
-            transition: var(--transition);
-        }
+.form-group {
+margin-bottom: 30px;
+}
 
-        .form-input:focus {
-            border-color: var(--gold);
-            background-color: rgba(255, 255, 255, 0.08);
-        }
+.form-label {
+display: block;
+font-family: var(--font-serif);
+font-size: 1.2rem;
+color: var(--gold);
+margin-bottom: 10px;
+letter-spacing: 1px;
+}
 
-        .form-input::placeholder {
-            color: rgba(255, 255, 255, 0.3);
-        }
+.form-input {
+width: 100%;
+padding: 15px;
+background-color: rgba(255, 255, 255, 0.03);
+border: 1px solid rgba(255, 255, 255, 0.15);
+border-radius: 4px;
+color: var(--white);
+font-size: 1rem;
+font-family: var(--font-sans);
+transition: var(--transition);
+}
 
-        /* Кнопки-радио */
-        .radio-group {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
+.form-input:focus {
+border-color: var(--gold);
+background-color: rgba(255, 255, 255, 0.08);
+}
 
-        .radio-label {
-            display: block;
-            position: relative;
-            cursor: pointer;
-        }
+.form-input::placeholder {
+color: rgba(255, 255, 255, 0.3);
+}
 
-        .radio-label input {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-            height: 0;
-            width: 0;
-        }
+/* Кнопки-радио */
+.radio-group {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 15px;
+}
 
-        .radio-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px;
-            background-color: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 4px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: var(--transition);
-        }
+.radio-label {
+display: block;
+position: relative;
+cursor: pointer;
+}
 
-        .radio-label input:checked ~ .radio-button {
-            background-color: var(--gold);
-            color: var(--black);
-            border-color: var(--gold);
-        }
+.radio-label input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+height: 0;
+width: 0;
+}
 
-        .radio-label input:focus-visible ~ .radio-button {
-            outline: 3px solid var(--white);
-            outline-offset: 2px;
-        }
+.radio-button {
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 15px;
+background-color: rgba(255, 255, 255, 0.03);
+border: 1px solid rgba(255, 255, 255, 0.15);
+border-radius: 4px;
+font-size: 1.1rem;
+font-weight: 600;
+transition: var(--transition);
+}
 
-        /* Ошибки валидации и сети */
-        .error-msg, .network-error-msg {
-            color: var(--error-red);
-            font-size: 0.9rem;
-            margin-top: 5px;
-            display: none;
-        }
+.radio-label input:checked ~ .radio-button {
+background-color: var(--gold);
+color: var(--black);
+border-color: var(--gold);
+}
 
-        .has-error .form-input, .has-error .radio-button {
-            border-color: var(--error-red);
-        }
-        
-        .has-error .error-msg {
-            display: block;
-        }
+.radio-label input:focus-visible ~ .radio-button {
+outline: 3px solid var(--white);
+outline-offset: 2px;
+}
 
-        .network-error-msg {
-            text-align: center;
-            font-size: 1rem;
-            margin-top: 15px;
-            font-weight: bold;
-        }
+/* Ошибки валидации и сети */
+.error-msg, .network-error-msg {
+color: var(--error-red);
+font-size: 0.9rem;
+margin-top: 5px;
+display: none;
+}
 
-        .submit-btn {
-            width: 100%;
-            background-color: var(--gold);
-            color: var(--black);
-            border: none;
-            padding: 18px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            font-family: var(--font-serif);
-            border-radius: 4px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: var(--transition);
-        }
+.has-error .form-input, .has-error .radio-button {
+border-color: var(--error-red);
+}
 
-        .submit-btn:hover:not(:disabled) {
-            background-color: var(--gold-hover);
-            transform: translateY(-2px);
-        }
+.has-error .error-msg {
+display: block;
+}
 
-        .submit-btn:active:not(:disabled) {
-            transform: translateY(0);
-        }
+.network-error-msg {
+text-align: center;
+font-size: 1rem;
+margin-top: 15px;
+font-weight: bold;
+}
 
-        .submit-btn:disabled {
-            background-color: #6a571c;
-            color: rgba(0, 0, 0, 0.6);
-            cursor: not-allowed;
-            transform: none;
-        }
+.submit-btn {
+width: 100%;
+background-color: var(--gold);
+color: var(--black);
+border: none;
+padding: 18px;
+font-size: 1.2rem;
+font-weight: 700;
+font-family: var(--font-serif);
+border-radius: 4px;
+cursor: pointer;
+text-transform: uppercase;
+letter-spacing: 2px;
+transition: var(--transition);
+}
 
-        /* === СООБЩЕНИЕ ОБ УСПЕХЕ === */
-        .success-box {
-            display: none;
-            text-align: center;
-            background-color: rgba(212, 175, 55, 0.05);
-            border: 1px solid var(--gold);
-            padding: 40px;
-            border-radius: var(--radius);
-        }
+.submit-btn:hover:not(:disabled) {
+background-color: var(--gold-hover);
+transform: translateY(-2px);
+}
 
-        .success-box h2 {
-            font-family: var(--font-serif);
-            color: var(--gold);
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
+.submit-btn:active:not(:disabled) {
+transform: translateY(0);
+}
 
-        /* === АДАПТИВНОСТЬ === */
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 2rem; }
-            .radio-group { grid-template-columns: 1fr; }
-            .rsvp-section { padding: 30px 20px; }
-            .info-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+.submit-btn:disabled {
+background-color: #6a571c;
+color: rgba(0, 0, 0, 0.6);
+cursor: not-allowed;
+transform: none;
+}
+
+/* === СООБЩЕНИЕ ОБ УСПЕХЕ === */
+.success-box {
+display: none;
+text-align: center;
+background-color: rgba(212, 175, 55, 0.05);
+border: 1px solid var(--gold);
+padding: 40px;
+border-radius: var(--radius);
+}
+
+.success-box h2 {
+font-family: var(--font-serif);
+color: var(--gold);
+margin-bottom: 10px;
+letter-spacing: 1px;
+}
+
+/* === АДАПТИВНОСТЬ === */
+@media (max-width: 600px) {
+.hero h1 { font-size: 2rem; }
+.radio-group { grid-template-columns: 1fr; }
+.rsvp-section { padding: 30px 20px; }
+.info-grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="brand">Midea</div>
-        <div class="lang-switch">
-            <button class="lang-btn active" data-lang="ru" aria-label="Switch to Russian">RU</button>
-            <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
-        </div>
-    </header>
+<header>
+<div class="brand">Midea</div>
+<div class="lang-switch">
+<button class="lang-btn active" data-lang="ru" aria-label="Switch to Russian">RU</button>
+<button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
+</div>
+</header>
 
-    <div class="container">
-        <main>
-            <section class="hero">
-                <h1 data-i18n="title">The Great Midea Corporate Celebration</h1>
-                <p class="subtitle" data-i18n="subtitle">Новый офис и Новый 2027 год</p>
-                <img src="Midea标志迁移至船身.jpg" alt="The Great Midea Corporate Celebration" />
-            </section>
+<div class="container">
+<main>
+<section class="hero">
+<h1 data-i18n="title">The Great Midea Corporate Celebration</h1>
+<p class="subtitle" data-i18n="subtitle">Новый офис и Новый 2027 год</p>
+<!-- Изображение для GitHub Pages -->
+<img src="0ea69620d15baa99f267bf61f48f39c6_2.jpg" alt="The Great Midea Corporate Celebration" />
+</section>
 
-            <section class="info-grid">
-                <div class="info-card">
-                    <h3 data-i18n="date_label">Дата</h3>
-                    <p data-i18n="date_value">21 декабря 2026 г.</p>
-                </div>
-                <div class="info-card">
-                    <h3 data-i18n="time_label">Время</h3>
-                    <p data-i18n="time_value">17:00–21:00</p>
-                </div>
-                <div class="info-card">
-                    <h3 data-i18n="venue_label">Место проведения</h3>
-                    <p data-i18n="venue_value">Теплоход Radisson, Москва</p>
-                    <a href="https://yandex.ru/maps/org/prichal_gostinitsa_ukraina/169313831025/?indoorLevel=1&ll=37.569244%2C55.750711&z=16.94" target="_blank" rel="noopener noreferrer" class="map-btn" data-i18n="map_btn">Открыть на Яндекс Картах</a>
-                </div>
-                <div class="info-card">
-                    <h3 data-i18n="dress_label">Дресс-код</h3>
-                    <p data-i18n="dress_value">Great Gatsby Dress Code</p>
-                </div>
-            </section>
+<section class="info-grid">
+<div class="info-card">
+<h3 data-i18n="date_label">Дата</h3>
+<p data-i18n="date_value">21 декабря 2026 г.</p>
+</div>
+<div class="info-card">
+<h3 data-i18n="time_label">Время</h3>
+<p data-i18n="time_value">17:00–21:00</p>
+</div>
+<div class="info-card">
+<h3 data-i18n="venue_label">Место проведения</h3>
+<p data-i18n="venue_value">Теплоход Radisson, Москва</p>
+<a href="https://yandex.ru/maps/org/prichal_gostinitsa_ukraina/169313831025/?indoorLevel=1&ll=37.569244%2C55.750711&z=16.94" target="_blank" rel="noopener noreferrer" class="map-btn" data-i18n="map_btn">Открыть на Яндекс Картах</a>
+</div>
+<div class="info-card">
+<h3 data-i18n="dress_label">Дресс-код</h3>
+<p data-i18n="dress_value">Great Gatsby Dress Code</p>
+</div>
+</section>
 
-            <div class="warning-box" data-i18n="warning">
-                Не опаздывайте! Теплоход отходит от причала в 17:00, приезжайте заблаговременно.
-            </div>
+<div class="warning-box" data-i18n="warning">
+Не опаздывайте! Теплоход отходит от причала в 17:00, приезжайте заблаговременно.
+</div>
 
-            <p class="description" data-i18n="description">
-                Приглашаем вас на корпоративное мероприятие The Great Midea Corporate Celebration 21 декабря 2026 года, посвящённое двум большим событиям: Переезду в новый офис и празднованию Нового 2027 года. Место проведения: теплоход Radisson, Москва. Тема вечера: джаз и Great Gatsby.
-            </p>
+<p class="description" data-i18n="description">
+Приглашаем вас на корпоративное мероприятие The Great Midea Corporate Celebration 21 декабря 2026 года, посвящённое двум большим событиям: Переезду в новый офис и празднованию Нового 2027 года. Место проведения: теплоход Radisson, Москва. Тема вечера: джаз и Great Gatsby.
+</p>
 
-            <section class="rsvp-section" id="rsvpSection">
-                <form id="rsvpForm" novalidate>
-                    <div class="form-group" id="nameGroup">
-                        <label for="userName" class="form-label" data-i18n="name_label">Как вас зовут?</label>
-                        <input type="text" id="userName" name="name" class="form-input" data-i18n-placeholder="name_placeholder" placeholder="Укажите имя и фамилию" required>
-                        <div class="error-msg" data-i18n="error_name">Пожалуйста, укажите имя.</div>
-                    </div>
+<section class="rsvp-section" id="rsvpSection">
+<form id="rsvpForm" novalidate>
+<div class="form-group" id="nameGroup">
+<label for="userName" class="form-label" data-i18n="name_label">Как вас зовут?</label>
+<input type="text" id="userName" name="name" class="form-input" data-i18n-placeholder="name_placeholder" placeholder="Укажите имя и фамилию" required>
+<div class="error-msg" data-i18n="error_name">Пожалуйста, укажите имя.</div>
+</div>
 
-                    <div class="form-group" id="attendanceGroup">
-                        <label class="form-label" data-i18n="attendance_label">Вы присоединитесь к корпоративному мероприятию The Great Midea Corporate Celebration?</label>
-                        <div class="radio-group">
-                            <label class="radio-label">
-                                <input type="radio" name="attendance" value="yes" required>
-                                <span class="radio-button" data-i18n="yes">Да</span>
-                            </label>
-                            <label class="radio-label">
-                                <input type="radio" name="attendance" value="no" required>
-                                <span class="radio-button" data-i18n="no">Нет</span>
-                            </label>
-                        </div>
-                        <div class="error-msg" data-i18n="error_attendance">Пожалуйста, выберите вариант ответа.</div>
-                    </div>
+<div class="form-group" id="attendanceGroup">
+<label class="form-label" data-i18n="attendance_label">Вы присоединитесь к корпоративному мероприятию The Great Midea Corporate Celebration?</label>
+<div class="radio-group">
+<label class="radio-label">
+<input type="radio" name="attendance" value="yes" required>
+<span class="radio-button" data-i18n="yes">Да</span>
+</label>
+<label class="radio-label">
+<input type="radio" name="attendance" value="no" required>
+<span class="radio-button" data-i18n="no">Нет</span>
+</label>
+</div>
+<div class="error-msg" data-i18n="error_attendance">Пожалуйста, выберите вариант ответа.</div>
+</div>
 
-                    <button type="submit" class="submit-btn" id="submitBtn" data-i18n="submit_btn">Отправить ответ</button>
-                    <div id="networkError" class="network-error-msg" data-i18n="error_network">Не удалось отправить ответ. Проверьте соединение и попробуйте снова.</div>
-                </form>
-            </section>
+<button type="submit" class="submit-btn" id="submitBtn" data-i18n="submit_btn">Отправить ответ</button>
+<div id="networkError" class="network-error-msg" data-i18n="error_network">Не удалось отправить ответ. Проверьте соединение и попробуйте снова.</div>
+</form>
+</section>
 
-            <section class="success-box" id="successBox">
-                <h2 data-i18n="success">Спасибо! Ваш ответ учтён.</h2>
-            </section>
-        </main>
-    </div>
+<section class="success-box" id="successBox">
+<h2 data-i18n="success">Спасибо! Ваш ответ учтён.</h2>
+</section>
+</main>
+</div>
 
-    <script>
-        const translations = {
-            ru: {
-                title: "The Great Midea Corporate Celebration",
-                subtitle: "Новый офис и Новый 2027 год",
-                date_label: "Дата",
-                date_value: "21 декабря 2026 г.",
-                time_label: "Время",
-                time_value: "17:00–21:00",
-                venue_label: "Место проведения",
-                venue_value: "Теплоход Radisson, Москва",
-                map_btn: "Открыть на Яндекс Картах",
-                dress_label: "Дресс-код",
-                dress_value: "Great Gatsby Dress Code",
-                warning: "Не опаздывайте! Теплоход отходит от причала в 17:00, приезжайте заблаговременно.",
-                description: "Приглашаем вас на корпоративное мероприятие The Great Midea Corporate Celebration 21 декабря 2026 года, посвящённое двум большим событиям: Переезду в новый офис и празднованию Нового 2027 года. Место проведения: теплоход Radisson, Москва. Тема вечера: джаз и Great Gatsby.",
-                name_label: "Как вас зовут?",
-                name_placeholder: "Укажите имя и фамилию",
-                attendance_label: "Вы присоединитесь к корпоративному мероприятию The Great Midea Corporate Celebration?",
-                yes: "Да",
-                no: "Нет",
-                submit_btn: "Отправить ответ",
-                sending: "Отправка…",
-                error_name: "Пожалуйста, укажите имя.",
-                error_attendance: "Пожалуйста, выберите вариант ответа.",
-                error_network: "Не удалось отправить ответ. Проверьте соединение и попробуйте снова.",
-                success: "Спасибо! Ваш ответ учтён."
-            },
-            en: {
-                title: "The Great Midea Corporate Celebration",
-                subtitle: "New Office & New Year 2027",
-                date_label: "Date",
-                date_value: "December 21, 2026",
-                time_label: "Time",
-                time_value: "17:00–21:00",
-                venue_label: "Venue",
-                venue_value: "Radisson Boat, Moscow",
-                map_btn: "Open in Yandex Maps",
-                dress_label: "Dress Code",
-                dress_value: "Great Gatsby Dress Code",
-                warning: "Please arrive on time. The boat departs at 17:00 — please plan to arrive in advance.",
-                description: "Join us for a corporate event The Great Midea Corporate Celebration on December 21, 2026, marking Two Big Events: the move to a new office and the New Year 2027 celebration. Venue: Radisson Boat, Moscow. Evening theme: Jazz & Great Gatsby.",
-                name_label: "What is your name?",
-                name_placeholder: "Enter your first and last name",
-                attendance_label: "Will you join the corporate event The Great Midea Corporate Celebration?",
-                yes: "Yes",
-                no: "No",
-                submit_btn: "Send response",
-                sending: "Sending…",
-                error_name: "Please enter your name.",
-                error_attendance: "Please select an answer.",
-                error_network: "Could not send your response. Please check your connection and try again.",
-                success: "Thank you! Your response has been recorded."
-            }
-        };
+<script>
+const translations = {
+ru: {
+title: "The Great Midea Corporate Celebration",
+subtitle: "Новый офис и Новый 2027 год",
+date_label: "Дата",
+date_value: "21 декабря 2026 г.",
+time_label: "Время",
+time_value: "17:00–21:00",
+venue_label: "Место проведения",
+venue_value: "Теплоход Radisson, Москва",
+map_btn: "Открыть на Яндекс Картах",
+dress_label: "Дресс-код",
+dress_value: "Great Gatsby Dress Code",
+warning: "Не опаздывайте! Теплоход отходит от причала в 17:00, приезжайте заблаговременно.",
+description: "Приглашаем вас на корпоративное мероприятие The Great Midea Corporate Celebration 21 декабря 2026 года, посвящённое двум большим событиям: Переезду в новый офис и празднованию Нового 2027 года. Место проведения: теплоход Radisson, Москва. Тема вечера: джаз и Great Gatsby.",
+name_label: "Как вас зовут?",
+name_placeholder: "Укажите имя и фамилию",
+attendance_label: "Вы присоединитесь к корпоративному мероприятию The Great Midea Corporate Celebration?",
+yes: "Да",
+no: "Нет",
+submit_btn: "Отправить ответ",
+sending: "Отправка…",
+error_name: "Пожалуйста, укажите имя.",
+error_attendance: "Пожалуйста, выберите вариант ответа.",
+error_network: "Не удалось отправить ответ. Проверьте соединение и попробуйте снова.",
+success: "Спасибо! Ваш ответ учтён."
+},
+en: {
+title: "The Great Midea Corporate Celebration",
+subtitle: "New Office & New Year 2027",
+date_label: "Date",
+date_value: "December 21, 2026",
+time_label: "Time",
+time_value: "17:00–21:00",
+venue_label: "Venue",
+venue_value: "Radisson Boat, Moscow",
+map_btn: "Open in Yandex Maps",
+dress_label: "Dress Code",
+dress_value: "Great Gatsby Dress Code",
+warning: "Please arrive on time. The boat departs at 17:00 — please plan to arrive in advance.",
+description: "Join us for a corporate event The Great Midea Corporate Celebration on December 21, 2026, marking Two Big Events: the move to a new office and the New Year 2027 celebration. Venue: Radisson Boat, Moscow. Evening theme: Jazz & Great Gatsby.",
+name_label: "What is your name?",
+name_placeholder: "Enter your first and last name",
+attendance_label: "Will you join the corporate event The Great Midea Corporate Celebration?",
+yes: "Yes",
+no: "No",
+submit_btn: "Send response",
+sending: "Sending…",
+error_name: "Please enter your name.",
+error_attendance: "Please select an answer.",
+error_network: "Could not send your response. Please check your connection and try again.",
+success: "Thank you! Your response has been recorded."
+}
+};
 
-        let currentLang = 'ru';
+let currentLang = 'ru';
 
-        function setLanguage(lang) {
-            currentLang = lang;
-            document.documentElement.lang = lang;
-            
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
-            });
+function setLanguage(lang) {
+currentLang = lang;
+document.documentElement.lang = lang;
 
-            document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
-                const key = element.getAttribute('data-i18n-placeholder');
-                if (translations[lang][key]) {
-                    element.placeholder = translations[lang][key];
-                }
-            });
+document.querySelectorAll('[data-i18n]').forEach(element => {
+const key = element.getAttribute('data-i18n');
+if (translations[lang][key]) {
+element.textContent = translations[lang][key];
+}
+});
 
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-            });
+document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+const key = element.getAttribute('data-i18n-placeholder');
+if (translations[lang][key]) {
+element.placeholder = translations[lang][key];
+}
+});
 
-            const submitBtn = document.getElementById('submitBtn');
-            if (submitBtn.disabled) {
-                submitBtn.textContent = translations[lang].sending;
-            }
-        }
+document.querySelectorAll('.lang-btn').forEach(btn => {
+btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+});
 
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                setLanguage(e.target.getAttribute('data-lang'));
-                document.getElementById('nameGroup').classList.remove('has-error');
-                document.getElementById('attendanceGroup').classList.remove('has-error');
-            });
-        });
+const submitBtn = document.getElementById('submitBtn');
+if (submitBtn.disabled) {
+submitBtn.textContent = translations[lang].sending;
+}
+}
 
-        // ИНТЕГРАЦИЯ С GOOGLE SHEETS - Железобетонный метод (Трюк с невидимой картинкой)
-        async function submitRSVP(payload) {
-            const ENDPOINT = 'https://script.google.com/macros/s/AKfycbzL4hN3vi2aGDdhgRx4bxTAoAS9lxgRL2wjIHaSi2Y-bgwYZTYgKV0AvHTevFeidawZuw/exec';
-            
-            const urlParams = new URLSearchParams({
-                name: payload.name,
-                attending: payload.attending,
-                language: payload.language,
-                t: new Date().getTime() // Защита от кэширования
-            });
-            
-            const finalUrl = `${ENDPOINT}?${urlParams.toString()}`;
-            
-            // Трюк: запрашиваем URL как невидимую картинку. 
-            // Браузер проигнорирует все запреты CORS и блокировки файлов.
-            new Image().src = finalUrl;
-            
-            // Даем браузеру 1 секунду на гарантированную отправку запроса перед показом сообщения об успехе
-            return new Promise(resolve => setTimeout(resolve, 1000));
-        }
+document.querySelectorAll('.lang-btn').forEach(btn => {
+btn.addEventListener('click', (e) => {
+setLanguage(e.target.getAttribute('data-lang'));
+document.getElementById('nameGroup').classList.remove('has-error');
+document.getElementById('attendanceGroup').classList.remove('has-error');
+});
+});
 
-        const form = document.getElementById('rsvpForm');
-        
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const nameInput = document.getElementById('userName');
-            const attendanceRadios = document.getElementsByName('attendance');
-            
-            const nameGroup = document.getElementById('nameGroup');
-            const attendanceGroup = document.getElementById('attendanceGroup');
-            const networkErrorEl = document.getElementById('networkError');
-            
-            let isValid = true;
-            let attendanceValue = null;
+// ИНТЕГРАЦИЯ С GOOGLE SHEETS - Официальный метод (для GitHub Pages)
+async function submitRSVP(payload) {
+const ENDPOINT = 'https://script.google.com/macros/s/AKfycbzL4hN3vi2aGDdhgRx4bxTAoAS9lxgRL2wjIHaSi2Y-bgwYZTYgKV0AvHTevFeidawZuw/exec';
 
-            if (nameInput.value.trim() === '') {
-                nameGroup.classList.add('has-error');
-                isValid = false;
-            } else {
-                nameGroup.classList.remove('has-error');
-            }
+const urlParams = new URLSearchParams({
+name: payload.name,
+attending: payload.attending,
+language: payload.language,
+t: new Date().getTime() // Защита от кэширования браузером
+});
 
-            let radioSelected = false;
-            for (const radio of attendanceRadios) {
-                if (radio.checked) {
-                    radioSelected = true;
-                    attendanceValue = radio.value;
-                    break;
-                }
-            }
-            
-            if (!radioSelected) {
-                attendanceGroup.classList.add('has-error');
-                isValid = false;
-            } else {
-                attendanceGroup.classList.remove('has-error');
-            }
+const finalUrl = `${ENDPOINT}?${urlParams.toString()}`;
 
-            if (isValid) {
-                const payload = {
-                    name: nameInput.value.trim(),
-                    attending: attendanceValue,
-                    language: currentLang
-                };
+// На настоящем сервере метод fetch работает стабильно на всех устройствах
+return fetch(finalUrl, {
+method: 'GET',
+mode: 'no-cors'
+});
+}
 
-                const submitBtn = document.getElementById('submitBtn');
-                
-                submitBtn.disabled = true;
-                submitBtn.textContent = translations[currentLang].sending;
-                networkErrorEl.style.display = 'none';
+const form = document.getElementById('rsvpForm');
 
-                try {
-                    await submitRSVP(payload);
-                    document.getElementById('rsvpSection').style.display = 'none';
-                    document.getElementById('successBox').style.display = 'block';
-                } catch (error) {
-                    console.error('Ошибка отправки:', error);
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = translations[currentLang].submit_btn;
-                    networkErrorEl.style.display = 'block';
-                }
-            }
-        });
+form.addEventListener('submit', async (e) => {
+e.preventDefault();
 
-        document.getElementById('userName').addEventListener('input', function() {
-            if (this.value.trim() !== '') {
-                document.getElementById('nameGroup').classList.remove('has-error');
-            }
-        });
-        
-        document.querySelectorAll('input[name="attendance"]').forEach(radio => {
-            radio.addEventListener('change', function() {
-                document.getElementById('attendanceGroup').classList.remove('has-error');
-            });
-        });
+const nameInput = document.getElementById('userName');
+const attendanceRadios = document.getElementsByName('attendance');
 
-        setLanguage('ru');
-    </script>
+const nameGroup = document.getElementById('nameGroup');
+const attendanceGroup = document.getElementById('attendanceGroup');
+const networkErrorEl = document.getElementById('networkError');
+
+let isValid = true;
+let attendanceValue = null;
+
+if (nameInput.value.trim() === '') {
+nameGroup.classList.add('has-error');
+isValid = false;
+} else {
+nameGroup.classList.remove('has-error');
+}
+
+let radioSelected = false;
+for (const radio of attendanceRadios) {
+if (radio.checked) {
+radioSelected = true;
+attendanceValue = radio.value;
+break;
+}
+}
+
+if (!radioSelected) {
+attendanceGroup.classList.add('has-error');
+isValid = false;
+} else {
+attendanceGroup.classList.remove('has-error');
+}
+
+if (isValid) {
+const payload = {
+name: nameInput.value.trim(),
+attending: attendanceValue,
+language: currentLang
+};
+
+const submitBtn = document.getElementById('submitBtn');
+
+submitBtn.disabled = true;
+submitBtn.textContent = translations[currentLang].sending;
+networkErrorEl.style.display = 'none';
+
+try {
+await submitRSVP(payload);
+document.getElementById('rsvpSection').style.display = 'none';
+document.getElementById('successBox').style.display = 'block';
+} catch (error) {
+console.error('Ошибка отправки:', error);
+submitBtn.disabled = false;
+submitBtn.textContent = translations[currentLang].submit_btn;
+networkErrorEl.style.display = 'block';
+}
+}
+});
+
+document.getElementById('userName').addEventListener('input', function() {
+if (this.value.trim() !== '') {
+document.getElementById('nameGroup').classList.remove('has-error');
+}
+});
+
+document.querySelectorAll('input[name="attendance"]').forEach(radio => {
+radio.addEventListener('change', function() {
+document.getElementById('attendanceGroup').classList.remove('has-error');
+});
+});
+
+setLanguage('ru');
+</script>
 </body>
 </html>
