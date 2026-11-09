@@ -395,8 +395,8 @@ letter-spacing: 1px;
 <section class="hero">
 <h1 data-i18n="title">The Great Midea Corporate Celebration</h1>
 <p class="subtitle" data-i18n="subtitle">Новый офис и Новый 2027 год</p>
-<!-- Изображение для GitHub Pages -->
-<img src="0ea69620d15baa99f267bf61f48f39c6_2.jpg" alt="The Great Midea Corporate Celebration" />
+<!-- Правильное название картинки, загруженной на GitHub -->
+<img src="Midea标志迁移至船身.jpg" alt="The Great Midea Corporate Celebration" />
 </section>
 
 <section class="info-grid">
@@ -555,7 +555,7 @@ document.getElementById('attendanceGroup').classList.remove('has-error');
 });
 });
 
-// ИНТЕГРАЦИЯ С GOOGLE SHEETS - Официальный метод (для GitHub Pages)
+// ИНТЕГРАЦИЯ С GOOGLE SHEETS - Бронебойный метод (Скрытый iframe для мобильных устройств)
 async function submitRSVP(payload) {
 const ENDPOINT = 'https://script.google.com/macros/s/AKfycbzL4hN3vi2aGDdhgRx4bxTAoAS9lxgRL2wjIHaSi2Y-bgwYZTYgKV0AvHTevFeidawZuw/exec';
 
@@ -568,11 +568,14 @@ t: new Date().getTime() // Защита от кэширования браузе
 
 const finalUrl = `${ENDPOINT}?${urlParams.toString()}`;
 
-// На настоящем сервере метод fetch работает стабильно на всех устройствах
-return fetch(finalUrl, {
-method: 'GET',
-mode: 'no-cors'
-});
+// Создаем невидимый iframe. Мобильные браузеры (особенно Safari) не блокируют загрузку iframe.
+const iframe = document.createElement('iframe');
+iframe.style.display = 'none';
+iframe.src = finalUrl;
+document.body.appendChild(iframe);
+
+// Даем браузеру 1.5 секунды на гарантированную доставку данных
+return new Promise(resolve => setTimeout(resolve, 1500));
 }
 
 const form = document.getElementById('rsvpForm');
@@ -655,3 +658,4 @@ setLanguage('ru');
 </script>
 </body>
 </html>
+
